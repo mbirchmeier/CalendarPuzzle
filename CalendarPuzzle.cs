@@ -24,11 +24,11 @@ namespace calendar
             board[7][3] = '*';
         }
 
-        public CalendarPuzzle(DateTime d) : this()
+        public CalendarPuzzle(DateTime targetDate) : this()
         {
-            int month = d.Month;
-            int day = d.Day;
-            int weekDay = (int)d.DayOfWeek;
+            int month = targetDate.Month;
+            int day = targetDate.Day;
+            int weekDay = (int)targetDate.DayOfWeek;
 
             int monthRow = (month - 1) / 6;
             int monthColumn = (month - 1) % 6;
