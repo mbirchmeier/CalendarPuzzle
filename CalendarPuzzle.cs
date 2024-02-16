@@ -24,6 +24,30 @@ namespace calendar
             board[7][3] = '*';
         }
 
+        public CalendarPuzzle(DateTime d) : this()
+        {
+            int month = d.Month;
+            int day = d.Day;
+            int weekDay = (int)d.DayOfWeek;
+
+            int monthRow = (month - 1) / 6;
+            int monthColumn = (month - 1) % 6;
+
+            int dayRow = (day-1) /7 + 2 ;
+            int dayColumn = (day - 1) % 7;
+
+            board[monthRow][monthColumn] = 'M';
+            board[dayRow][dayColumn] = 'D';
+
+            if (weekDay <=3)
+            {
+                board[6][3 + weekDay] = 'W';
+            }
+            else
+            {
+                board[7][weekDay] = 'W';
+            }
+        }
         public void DisplayBoard() {
             for (int x = 0; x != 8; x++)
             {
