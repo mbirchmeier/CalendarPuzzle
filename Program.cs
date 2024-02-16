@@ -39,4 +39,8 @@ allPieces.Add(new PuzzlePiece(new string[] {"* *",
 
 
 #endregion
+
+x.FillBoard(allPieces);
+
 x.DisplayBoard();
+
